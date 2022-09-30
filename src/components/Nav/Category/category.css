@@ -1,0 +1,161 @@
+.category_container{
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100%;
+  animation: smoothOpen 0.6s;
+  transition: 0.5s;
+}
+.category_container.true{
+  width: 400px;
+}
+.open_category_background{
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black-opacity-50);
+  animation: smoothBackGround 0.6s;
+}
+.category_main_box{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+  background-color: white;
+}
+.category_2depth_box{
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100%;
+  border-right: 3px solid black;
+  background-color: white;
+  transition: all 0.5s;
+}
+.category_2depth_box.true{
+  left: 200px;
+}
+.main_category_lists,
+.sub_category_lists{
+  list-style: none;
+  margin: 50px 0 0 0;
+  height: 300px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+.main_category_lists li,
+.sub_category_lists li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 55px;
+  padding: 0 0 0 30px;
+  border-bottom: 1px solid lightgray;
+}
+.main_category_btn span,
+.sub_category_btn{
+  display: block;
+  line-height: 30px;
+  pointer-events: none;
+  height: 30px;
+}
+.furniture,
+.beauty,
+.foods,
+.electronics,
+.fashion{
+  display: block;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  padding-left: 40px;
+  font-weight: 700;
+}
+.furniture{
+  background-image: url(../../../data/category/furniture.png);
+}
+.beauty{
+  background-image: url(../../../data/category/beauty.png);
+}
+.foods{
+  background-image: url(../../../data/category/foods.png);
+}
+.electronics{
+  background-image: url(../../../data/category/electronics.png);
+}
+.fashion{
+  background-image: url(../../../data/category/fashion.png);
+}
+
+.furniture.active,
+.furniture:hover{
+  background-image: url(../../../data/category/furniture_active.png);
+  color: white;
+}
+.beauty.active,
+.beauty:hover{
+  background-image: url(../../../data/category/beauty_active.png);
+  color: white;
+}
+.foods.active,
+.foods:hover{
+  background-image: url(../../../data/category/foods_active.png);
+  color: white;
+}
+.electronics.active,
+.electronics:hover{
+  background-image: url(../../../data/category/electronics_active.png);
+  color: white;
+}
+.fashion.active,
+.fashion:hover{
+  background-image: url(../../../data/category/fashion_active.png);
+  color: white;
+}
+.main_category_list_box.active{
+  background: linear-gradient(30deg, var(--color-main), var(--color-main-dark));
+}
+
+@keyframes smoothOpen {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothClose {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes smoothBackGround {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
